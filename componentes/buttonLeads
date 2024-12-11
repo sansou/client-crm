@@ -1,0 +1,25 @@
+'use client';
+
+import { useRouter } from 'next/router';
+
+const GoToLeadsButton = () => {
+  const router = useRouter();
+
+  const handleRedirect = () => {
+    const project = {
+      id: '123',
+      name: 'Projeto Exemplo',
+      domains: ['example.com', 'anotherdomain.com'],
+    };
+
+    router.push({
+      pathname: '/leads',
+      query: {}, // Query pode ficar vazio se não for necessário expor nada na URL
+    })
+  };
+
+  
+  
+};
+
+export default GoToLeadsButton;
