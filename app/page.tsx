@@ -6,11 +6,9 @@ export default async function Page() {
     const response = await fetch('http://localhost:3000/projects')
     // let data: any = []
     const data = await response.json()
-    console.log(data)
     projects = data
   } catch (error) {
     console.error(error);
-
   }
   return (
     <>
@@ -18,7 +16,7 @@ export default async function Page() {
         {projects.map((p: any) =>
           <Link
             href={p.pk}
-            className="w-1/4 space-y-2 space-x-2 relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
+            className="w-1/4 relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
           >
             <span
               className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"

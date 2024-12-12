@@ -1,9 +1,10 @@
 export default async function Page({
   params,
 }: {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }) {
-  const response = await fetch('http://localhost:3000/leads/project/'+ params.id)
+  const _id = (await params).id;
+  const response = await fetch('http://localhost:3000/leads/project/'+ _id)
   const data = await response.json()
   
   return (
