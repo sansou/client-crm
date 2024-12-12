@@ -3,8 +3,9 @@ export default async function Page({
 }: {
   params: { id: string }
 }) {
-  const response = await fetch('http://localhost:3000/leads/project/a-qQzmV3')
+  const response = await fetch('http://localhost:3000/leads/project/'+ params.id)
   const data = await response.json()
+  
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
@@ -22,7 +23,7 @@ export default async function Page({
             <tr>
               <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{l.name}</td>
               <td className="whitespace-nowrap px-4 py-2 text-gray-700">{l.createdAt}</td>
-              <td className="whitespace-nowrap px-4 py-2 text-gray-700">{l.email}</td>
+              <td className="whitespace-nowrap px-4 py-2 text-gray-700">{l.sk}</td>
               <td className="whitespace-nowrap px-4 py-2 text-gray-700">{l.phone}</td>
             </tr>
           ))}
